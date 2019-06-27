@@ -8,6 +8,7 @@ export default {
     signUp: "Registrar",
     mainPage: "Main",
     categories: "Categorias",
-    authors: "Autores"
+    authors: "Autores",
+    books: "Livros"
   }
 };
