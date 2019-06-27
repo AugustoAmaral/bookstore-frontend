@@ -8,10 +8,10 @@ import { Button } from "@material-ui/core";
 
 const styles = theme => ({
   formControl: {
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing(2)
   },
   submit: {
-    marginTop: theme.spacing.unit * 3
+    marginTop: theme.spacing(3)
   }
 });
 

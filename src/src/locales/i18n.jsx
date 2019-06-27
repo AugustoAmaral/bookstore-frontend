@@ -16,7 +16,7 @@ i18n
   .init({
     resources,
     fallbackLng: "en",
-    debug: process.env.REACT_APP_DEVELOPMENT,
+    debug: true,
     interpolation: {
       escapeValue: false
     }
