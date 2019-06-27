@@ -9,6 +9,9 @@ export default {
     mainPage: "Main",
     categories: "Categorias",
     authors: "Autores",
-    books: "Livros"
+    books: "Livros",
+    search: "Buscar",
+    main: "Homepage",
+    logoff: "Sair"
   }
 };

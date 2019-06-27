@@ -1,7 +1,13 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import { makeStyles, fade } from "@material-ui/core/styles";
-import { Toolbar, IconButton, Typography, Button } from "@material-ui/core";
+import {
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+  Badge
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useTranslation } from "react-i18next";
 import InputBase from "@material-ui/core/InputBase";
@@ -12,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  cartButton: {
+    marginRight: 8
   },
   toolbar: {
     marginRight: -12,
@@ -87,21 +96,27 @@ const TopBar = ({ user, buttons, openMenu }) => {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder={t("search") + "..."}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput
               }}
-              inputProps={{ "aria-label": "Search" }}
+              inputProps={{ "aria-label": t("search") }}
             />
           </div>
         </div>
         <div>
           {Buttons && <Buttons />}
-          <IconButton color="inherit">
-            <ShoppingCart />
+          <IconButton className={classes.cartButton} color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <ShoppingCart />
+            </Badge>
           </IconButton>
-          <Button variant="outlined" color="inherit" onClick={() => user.logout()}>
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={() => user.logout()}
+          >
             {t("logoff")}
           </Button>
         </div>
