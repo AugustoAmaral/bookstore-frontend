@@ -1,11 +1,12 @@
 import React from "react";
-import SignIn from "./authentication/SignIn";
+import Routes from "./control/Routes";
+import User from "./control/user";
 
 const App = () => {
   return (
     <>
       {" "}
-      <SignIn />
+      <Routes user={User} />
     </>
   );
 };

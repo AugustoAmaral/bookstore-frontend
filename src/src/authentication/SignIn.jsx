@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Redirect } from "react-router-dom";
 import { Grid, Button } from "@material-ui/core";
 import SignInForm from "./SignInForm";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -31,13 +32,14 @@ class SignIn extends React.Component {
         password: this.state.signForm.get("password")
       }
     });
-    console.log(this.state.signInInfo);
+    this.props.user.authenticate({...this.state.signInInfo});
   };
 
   render() {
-    const { t, classes } = this.props;
+    const { t, classes, user } = this.props;
     return (
       <Fragment>
+      {user.authenticated() && <Redirect to="/" />}
         <Grid container justify="center">
           <Grid item xs={12} sm={5} lg={3}>
             <Paper className={classes.paper}>
