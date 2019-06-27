@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const TopBar = ({ user }) => {
+const TopBar = ({ user, openMenu }) => {
   const classes = useStyles();
   return (
     <AppBar>
@@ -26,6 +26,7 @@ const TopBar = ({ user }) => {
           className={classes.menuButton}
           color="inherit"
           aria-label="Menu"
+          onClick={() => openMenu()}
         >
           <MenuIcon />
         </IconButton>

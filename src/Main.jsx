@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import TopBar from "./components/common/TopBar";
+import LeftSideBar from "./components/common/LeftSideBar";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -18,12 +19,25 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
+
 const Main = ({ component, ...props }) => {
   const Component = component;
+  const [isMenuOpen, openMenu] = useState(false);
   const classes = useStyles();
+
+  const handleMenu = () => {
+    openMenu(!isMenuOpen);
+  };
+
   return (
     <>
-      <TopBar user={props.user} />
+      <TopBar openMenu={() => handleMenu()} user={props.user} />
+      <LeftSideBar
+        // Menu={MENU}
+        open={isMenuOpen}
+        onClose={handleMenu}
+        onOpen={handleMenu}
+      />
       <div className={classes.root}>
         <Component {...props} />
       </div>
