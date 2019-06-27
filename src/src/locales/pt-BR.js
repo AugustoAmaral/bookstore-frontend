@@ -3,6 +3,8 @@ export default {
     username: "Usuário",
     password: "Senha",
     pleaseFillTheField: "Por favor, preencha o campo {{field}}",
-    sign_in: "Entrar"
+    signIn: "Entrar",
+    lostPassword: "Esqueceu a senha?",
+    signUp: "Registrar"
   }
 };

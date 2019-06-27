@@ -12,6 +12,9 @@ const styles = theme => ({
   },
   submit: {
     marginTop: theme.spacing(3)
+  },
+  lostPassword: {
+    marginTop: theme.spacing(1)
   }
 });
 
@@ -51,7 +54,22 @@ class SignIn extends React.Component {
                 color="primary"
                 form="signIn"
               >
-                {t("sign_in")}
+                {t("signIn")}
+              </Button>
+              <Button
+                size="small"
+                className={classes.lostPassword}
+                onClick={() => console.log("lostPassword")}
+              >
+                {t("lostPassword")}
+              </Button>
+              <br />
+              <Button
+                size="small"
+                className={classes.lostPassword}
+                onClick={() => console.log("signUp")}
+              >
+                {t("signUp")}
               </Button>
             </Paper>
           </Grid>
