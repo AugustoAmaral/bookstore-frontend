@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import SignIn from "../components/authentication/SignIn";
 import Main from "../Main";
 import Home from "../components/Home";
+import Authors from "../components/authors/Authors";
+import Categories from "../components/categories/Categories";
 
 export const MENU = [
   ["mainPage", "/"],
@@ -35,6 +37,8 @@ const Routes = ({ user }) => (
         }
       />
       <PrivateRoute exact path="/" component={Home} user={user} />
+      <PrivateRoute path="/authors" component={Authors} user={user} />
+      <PrivateRoute path="/categories" component={Categories} user={user} />
       <Route render={() => <p>Not Found :(</p>} />
     </Switch>
   </BrowserRouter>

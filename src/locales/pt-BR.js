@@ -5,6 +5,9 @@ export default {
     pleaseFillTheField: "Por favor, preencha o campo {{field}}",
     signIn: "Entrar",
     lostPassword: "Esqueceu a senha?",
-    signUp: "Registrar"
+    signUp: "Registrar",
+    mainPage: "Main",
+    categories: "Categorias",
+    authors: "Autores"
   }
 };

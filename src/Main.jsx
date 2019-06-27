@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TopBar from "./components/common/TopBar";
 import LeftSideBar from "./components/common/LeftSideBar";
 import { makeStyles } from "@material-ui/core/styles";
+import { MENU } from "./control/Routes";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,7 +34,7 @@ const Main = ({ component, ...props }) => {
     <>
       <TopBar openMenu={() => handleMenu()} user={props.user} />
       <LeftSideBar
-        // Menu={MENU}
+        menu={MENU}
         open={isMenuOpen}
         onClose={handleMenu}
         onOpen={handleMenu}
