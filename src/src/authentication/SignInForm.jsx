@@ -4,14 +4,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
-import { Button } from "@material-ui/core";
 
 const styles = theme => ({
   formControl: {
     marginTop: theme.spacing(2)
-  },
-  submit: {
-    marginTop: theme.spacing(3)
   }
 });
 
@@ -60,21 +56,12 @@ const Form = withStyles(styles)(
           required
           type="password"
         />
-        <Button
-          className={classes.submit}
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-        >
-          {t("sign_in")}
-        </Button>
       </form>
     );
   }
 );
 
-const SignInForm = props => {
+const SignInForm = ({ signForm, onSubmit, id }) => {
   const { t } = useTranslation();
   return (
     <Formik
@@ -91,12 +78,12 @@ const SignInForm = props => {
         )
       })}
       onSubmit={(values, { setSubmitting }) => {
-        props.formState.set("username", values.username);
-        props.formState.set("password", values.password);
-        props.onSubmit();
+        signForm.set("username", values.username);
+        signForm.set("password", values.password);
+        onSubmit();
         setSubmitting(false);
       }}
-      render={formikProps => <Form {...formikProps} id={props.id} />}
+      render={formikProps => <Form {...formikProps} id={id} />}
     />
   );
 };
